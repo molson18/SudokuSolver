@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Sudoku C)
+project(SudokuSolver C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -15,6 +15,13 @@ set(CMAKE_C_FLAGS_RELEASE "-O3")
 add_library(Stack STATIC src/Stack.c)
 target_include_directories(Stack PRIVATE include)
 
-add_executable(${PROJECT_NAME} src/sudoku.c)
+add_library(${PROJECT_NAME} STATIC src/Sudoku.c)
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_link_libraries(${PROJECT_NAME} PUBLIC Stack)
+
+
+find_package(Curses REQUIRED)
+
+add_executable(Sudoku sudoku.c)
+target_include_directories(Sudoku PRIVATE include ${CURSES_INCLUDE_DIR})
+target_link_libraries(Sudoku PUBLIC SudokuSolver ${CURSES_LIBRARY})

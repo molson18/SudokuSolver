@@ -1,5 +1,6 @@
-#include "sudoku.h"
+#include "Sudoku.h"
 
+/*
 int main(int argc, char* argv[]) {
 
 
@@ -22,6 +23,7 @@ int main(int argc, char* argv[]) {
 	printf("%lx\n", sudokuHash(board));
 	free(board);
 }
+*/
 
 void printSudoku(Sudoku *board) {
 	printf("-------------------------\n");

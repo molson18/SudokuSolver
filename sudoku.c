@@ -16,6 +16,7 @@
 #include <string.h>
 #include "sudoku.h"
 #include <time.h>
+#include "Sudoku.h"
 
 // macro for processing control characters
 #define CTRL(x) ((x) & ~0140)
@@ -99,6 +100,7 @@ bool checkWin(void);
 void append(void);
 void deleteNode(void);
 void possMoves(void);
+void solve_board(void);
 
 int main(int argc, char *argv[])
 {
@@ -258,37 +260,39 @@ int main(int argc, char *argv[])
                 show_cursor();
                 break;
             }
-        }
 
-        // undoing last move
-        if (ch == 'U' || ch == CTRL('z'))
-        {
-            if (head != NULL)
-            {
-                node* end = malloc(sizeof(node));
-                end = head;
-                while (end->next != NULL)
-                {
-                    end = end->next;
-                }
-                g.board[end->storage[0]][end->storage[1]] = end->storage[2];
-                deleteNode();
-                draw_numbers();
-                show_cursor();
-            }
-            else
-            {
-                show_banner("CAN'T UNDO");
-                show_cursor();
-            }
-        }
+			case 'U':
+			case CTRL('z'):
+				if (head != NULL)
+				{
+					node* end = malloc(sizeof(node));
+					end = head;
+					while (end->next != NULL)
+					{
+						end = end->next;
+					}
+					g.board[end->storage[0]][end->storage[1]] = end->storage[2];
+					deleteNode();
+					draw_numbers();
+					show_cursor();
+				}
+				else
+				{
+					show_banner("CAN'T UNDO");
+					show_cursor();
+				}
+				break;
+			
+			case '.':
+			case KEY_BACKSPACE:
+			case KEY_DC:
+				ch = '0';
+				break;
 
-        // so that '.', backspace, and delete are equivlent to 0
-        if (ch == '.' || ch == KEY_BACKSPACE || ch == KEY_DC)
-        {
-            ch = '0';
+			case 'S':
+				solve_board();
+				
         }
-
         // sets the space equal to input as long as it was not given at start
         if (ch >= '0' && ch <= '9' && g.og[g.y][g.x] == 0 && !g.win)
         {
@@ -944,3 +948,19 @@ void deleteNode(void)
     }
 }
 
+void solve_board()
+{
+	Sudoku b;
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+			b.b[i][j] = g.board[i][j];
+		}
+	}
+	solveBoard(&b);
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+			g.board[i][j] = b.b[i][j];
+		}
+	}
+	redraw_all();
+}
