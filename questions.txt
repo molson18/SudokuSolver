@@ -1,0 +1,14 @@
+1. That the strings have exactly the same chars in the same order
+2.  if (strcmp(g.level, "debug") == 0)
+        {
+            int max = 9;
+        }
+    else
+        {
+        int max = 1024;
+        }
+3. If for the level someone inputted a number followed by a char
+4. g.x and g.y
+5. redraw_all
+6. around line 166, in the switch
+7. theres 1 space in debug 1, 2 in debug 2, and 9 in debug 9
