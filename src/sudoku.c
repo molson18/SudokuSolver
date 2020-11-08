@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
 	Sudoku *board = malloc(sizeof(Sudoku));
 	readBoard(board, argv[1]);
 
-	printf("%lx\n", sudokuHash(board));
+	printf("%llx\n", sudokuHash(board));
 	printSudoku(board);
 
 	clock_t start = clock();
@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 	double time = 1000 * (double)(clock() - start) / CLOCKS_PER_SEC;
 	printf("%f milliseconds\n", time);
 	printSudoku(board);
-	printf("%lx\n", sudokuHash(board));
+	printf("%llx\n", sudokuHash(board));
 	free(board);
 }
 
