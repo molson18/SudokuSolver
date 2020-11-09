@@ -1,27 +1,27 @@
-#include "sudoku.h"
+#include "Sudoku.h"
 
-int main(int argc, char* argv[]) {
+/*int main(int argc, char* argv[]) {*/
 
 
-	if (argc != 2) {
-		fprintf(stderr, "Usage: ./Sudoku filename\n");
-		return 1;
-	}			
+	/*if (argc != 2) {*/
+		/*fprintf(stderr, "Usage: ./Sudoku filename\n");*/
+		/*return 1;*/
+	/*}			*/
 
-	Sudoku *board = malloc(sizeof(Sudoku));
-	readBoard(board, argv[1]);
+	/*Sudoku *board = malloc(sizeof(Sudoku));*/
+	/*readBoard(board, argv[1]);*/
 
-	printf("%llx\n", sudokuHash(board));
-	printSudoku(board);
+	/*printf("%llx\n", sudokuHash(board));*/
+	/*printSudoku(board);*/
 
-	clock_t start = clock();
-	solveBoard(board);
-	double time = 1000 * (double)(clock() - start) / CLOCKS_PER_SEC;
-	printf("%f milliseconds\n", time);
-	printSudoku(board);
-	printf("%llx\n", sudokuHash(board));
-	free(board);
-}
+	/*clock_t start = clock();*/
+	/*solveBoard(board);*/
+	/*double time = 1000 * (double)(clock() - start) / CLOCKS_PER_SEC;*/
+	/*printf("%f milliseconds\n", time);*/
+	/*printSudoku(board);*/
+	/*printf("%llx\n", sudokuHash(board));*/
+	/*free(board);*/
+/*}*/
 
 void printSudoku(Sudoku *board) {
 	printf("-------------------------\n");
@@ -427,7 +427,6 @@ void deleteSet(SudokuSet *set) {
 		int temp = deleteBucket(set->set[i]);
 		if (temp > maxdepth) { maxdepth = temp; }
 	}
-	printf("max bucket: %i num buckets: %i\n", maxdepth, set->buckets);
 	free(set->set);
 	free(set);
 }

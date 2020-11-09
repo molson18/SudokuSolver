@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Stack.h
+stdlib.h
+-
+
+../include/Sudoku.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+stdint.h
+-
+time.h
+-
+Stack.h
+../include/Stack.h
+
+/home/msolson/SudokuSolver/src/Sudoku.c
+Sudoku.h
+/home/msolson/SudokuSolver/src/Sudoku.h
+

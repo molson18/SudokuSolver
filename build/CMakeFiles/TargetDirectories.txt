@@ -1,0 +1,4 @@
+/home/msolson/SudokuSolver/build/CMakeFiles/edit_cache.dir
+/home/msolson/SudokuSolver/build/CMakeFiles/rebuild_cache.dir
+/home/msolson/SudokuSolver/build/CMakeFiles/Sudoku.dir
+/home/msolson/SudokuSolver/build/CMakeFiles/Stack.dir

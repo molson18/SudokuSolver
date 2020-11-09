@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/msolson/SudokuSolver/build",
+  "command": "/usr/bin/cc  -I/home/msolson/SudokuSolver/include  -Wall -Wextra -O3   -std=gnu11 -o CMakeFiles/Sudoku.dir/src/Sudoku.c.o   -c /home/msolson/SudokuSolver/src/Sudoku.c",
+  "file": "/home/msolson/SudokuSolver/src/Sudoku.c"
+},
+{
+  "directory": "/home/msolson/SudokuSolver/build",
+  "command": "/usr/bin/cc  -I/home/msolson/SudokuSolver/include  -Wall -Wextra -O3   -std=gnu11 -o CMakeFiles/Stack.dir/src/Stack.c.o   -c /home/msolson/SudokuSolver/src/Stack.c",
+  "file": "/home/msolson/SudokuSolver/src/Stack.c"
+}
+]

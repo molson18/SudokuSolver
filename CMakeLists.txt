@@ -15,6 +15,6 @@ set(CMAKE_C_FLAGS_RELEASE "-O3")
 add_library(Stack STATIC src/Stack.c)
 target_include_directories(Stack PRIVATE include)
 
-add_executable(${PROJECT_NAME} src/sudoku.c)
+add_library(${PROJECT_NAME} STATIC src/Sudoku.c)
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_link_libraries(${PROJECT_NAME} PUBLIC Stack)
