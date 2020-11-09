@@ -1,2 +1,0 @@
-/usr/bin/ar qc libSudokuSolver.a  CMakeFiles/SudokuSolver.dir/src/Sudoku.c.o
-/usr/bin/ranlib libSudokuSolver.a
