@@ -59,9 +59,7 @@ static struct PyModuleDef SudokuSolvermodule = {
 PyMODINIT_FUNC
 PyInit_SudokuSolver(void) 
 {
-	printf("Debugging the hard way\n");
 	PyMODINIT_FUNC test = PyModule_Create(&SudokuSolvermodule);
-	printf("It's not a problem on C end\n");
     return test; 
 }
 
